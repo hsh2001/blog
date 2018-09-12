@@ -1,0 +1,13 @@
+#profile {
+  width: 80%;
+  max-width: 450px;
+  margin: -6rem auto 1rem auto;
+  padding: 1rem;
+}
+
+#profile-image {
+  width: 150px;
+  height: 150px;
+  margin: -3rem auto 1rem auto;
+  border-radius: 100%;
+}

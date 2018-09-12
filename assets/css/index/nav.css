@@ -1,0 +1,46 @@
+nav {
+  width: 85%;
+  max-width: 1450px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+}
+
+@media screen and (min-width: 650px) and (max-width: 999px) {
+  nav {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+  nav {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  nav {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+nav > div {
+  margin: 1rem 0;
+}
+
+nav > div > img {
+  width: 50%;
+  margin: auto;
+  border-radius: 1rem;
+}
+
+nav > div > img.app {
+  width: 30%;
+  padding: 10%;
+  background: #ff9c29;
+  background: linear-gradient(90deg, #ffc929 0%, #ff9c29 100%);
+}
+
+nav > div > a.button {
+  width: 70%;
+}
