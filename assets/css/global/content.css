@@ -30,6 +30,14 @@ p.no-border.title {
   border: 0 !important;
 }
 
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
 .center {
   text-align: center;
 }

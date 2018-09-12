@@ -11,12 +11,17 @@
     <link rel="stylesheet" href="assets/css/global/content.css">
     <link rel="stylesheet" href="assets/css/global/button.css">
     <link rel="stylesheet" href="assets/css/global/body.css">
+    <link rel="stylesheet" href="assets/css/global/article.css">
+    <link rel="stylesheet" href="assets/css/global/footer.css">
+    <link rel="stylesheet" href="assets/css/global/disqus.css">
 
     <link rel="stylesheet" href="assets/css/index/background.css">
     <link rel="stylesheet" href="assets/css/index/nav.css?">
     <link rel="stylesheet" href="assets/css/index/profile.css">
 
     <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
+    <script src="assets/js/global/ajax.js"></script>
+    <script src="assets/js/global/footer.js"></script>
   </head>
   <body>
     <div id="background">
@@ -31,11 +36,13 @@
         src="img/index/09060125.JPG"
         alt="블로거 프로필 사진">
       <p class="no-border title">황승현</p>
-      <p>웹 프로그래머, 이 블로그의 작성자.</p>
+      <p class="left">
+        웹, 앱, 게임, 서버 등등 여러가지를 도전해보고 있는 한 학생의 블로그입니다.
+      </p>
     </div>
 
     <br>
-    <p class="glass-bg rounded shadow center box-title">글 주제</p>
+    <p class="glass-bg rounded shadow center box-title">주제</p>
     <nav>
       <div class="center">
         <img src="img/index/html.png" alt="HTML">
@@ -111,6 +118,20 @@
         <a href="" class="g-blue button">Click me!</a>
       </div>
     </nav>
-    <p class="glass-bg rounded shadow box-title">d</p>
+
+    <br>
+    <p class="glass-bg rounded shadow center box-title">저작권</p>
+    <article class="glass-bg rounded shadow">
+      <p class="center">
+        Copyright (c) 2018 "Seung-hyun Hwang" All Rights Reserved.
+      </p>
+    </article>
+
+    <br>
+    <p class="glass-bg rounded shadow center box-title">커뮤니티</p>
+    <div id="disqus_thread"></div>
+    <script src="assets/js/global/disqus.js"></script>
+
+    <footer>Copyright (c) 2018 "Seung-hyun Hwang" All Rights Reserved.</footer>
   </body>
 </html>
