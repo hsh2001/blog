@@ -1,5 +1,9 @@
 html {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: "나눔고딕", nanumgothic,
+               "애플산돌고딕네오", AppleSDGothicNeo,
+               "애플고딕", AppleGothic,
+               "돋움", Dotum,
+               sans-serif;
 }
 
 head {
