@@ -5,3 +5,16 @@ footer {
   color: white;
   text-align: center;
 }
+
+#footer-buttons {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+#footer-buttons img {
+  display: inline-block;
+  width: 48px;
+  margin: .5rem;
+}

@@ -1,6 +1,6 @@
 nav {
   width: 85%;
-  max-width: 1450px;
+  max-width: 1250px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: auto;
