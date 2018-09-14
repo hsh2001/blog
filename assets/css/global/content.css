@@ -18,6 +18,17 @@ p.box-title {
   font-weight: 800;
 }
 
+.main-title {
+  padding: 3rem 1rem;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  background: #36d1dc;
+  background: linear-gradient(90deg, #36d1dc, #5b86e5);
+}
+
 .box {
   width: 80%;
   max-width: 450px;
@@ -66,4 +77,21 @@ p.no-border.title {
    -webkit-backdrop-filter: blur(40px);
    background: rgba(255, 255, 255, 0.6) !important;
   }
+}
+
+img.icon {
+  width: 5rem;
+  margin: 1.5rem auto;
+}
+
+code {
+  overflow-x: scroll;
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  border-top: .5rem solid #8e8;
+  border-radius: .5rem;
+  white-space: pre;
+  background: #323232;
+  color: white;
 }
