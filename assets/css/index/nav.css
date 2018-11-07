@@ -1,4 +1,4 @@
-nav {
+div.list {
   width: 85%;
   max-width: 1250px;
   display: grid;
@@ -7,40 +7,40 @@ nav {
 }
 
 @media screen and (min-width: 650px) and (max-width: 999px) {
-  nav {
+  div.list {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
-  nav {
+  div.list {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 1201px) {
-  nav {
+  div.list {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
-nav > div {
+div.list > div {
   margin: 1rem 0;
 }
 
-nav > div > img {
+div.list > div > img {
   width: 50%;
   margin: auto;
   border-radius: 1rem;
 }
 
-nav > div > img.app {
+div.list > div > img.app {
   width: 30%;
   padding: 10%;
   background: #ff9c29;
   background: linear-gradient(90deg, #ffc929 0%, #ff9c29 100%);
 }
 
-nav > div > a.button {
+div.list > div > a.button {
   width: 70%;
 }

@@ -5,9 +5,17 @@ var ajax = {};
 ajax.fetch = function (data, responseType) {
   let http = new XMLHttpRequest(),
       method = 'GET',
-      path = data.path,
+      path,
       param = '',
       callback;
+
+  if (typeof data == 'string')
+    data = { path: data };
+
+  if (!data || typeof data != 'object')
+    throw new Error("first argument is not an object or string.");
+
+  path = data.path;
 
   if (!path)
     return Promise.reject("path not found");
@@ -74,13 +82,14 @@ ajax.fetch = function (data, responseType) {
                 return;
               }
               break;
+
             case HTMLElement:
               result = (function () {
                 let elem = document.createElement('div');
                 elem.innerHTML = result;
                 return elem.childNodes;
               })();
-            case Text:
+
             default:
               break;
           }

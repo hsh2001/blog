@@ -7,13 +7,15 @@
     <title>개발자국: 개발자를 위한 나라.</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/global/reset.css">
-    <link rel="stylesheet" href="assets/css/global/content.css">
-    <link rel="stylesheet" href="assets/css/global/button.css">
-    <link rel="stylesheet" href="assets/css/global/body.css">
-    <link rel="stylesheet" href="assets/css/global/article.css">
-    <link rel="stylesheet" href="assets/css/global/footer.css">
-    <link rel="stylesheet" href="assets/css/global/disqus.css">
+    <link rel="stylesheet" href="/blog/assets/css/global/reset.css">
+    <link rel="stylesheet" href="/blog/assets/css/global/content.css">
+    <link rel="stylesheet" href="/blog/assets/css/global/button.css">
+    <link rel="stylesheet" href="/blog/assets/css/global/body.css">
+    <link rel="stylesheet" href="/blog/assets/css/global/article.css">
+    <link rel="stylesheet" href="/blog/assets/css/global/header.css">
+    <link rel="stylesheet" href="/blog/assets/css/global/nav.css">
+    <link rel="stylesheet" href="/blog/assets/css/global/footer.css">
+    <link rel="stylesheet" href="/blog/assets/css/global/disqus.css">
 
     <link rel="stylesheet" href="assets/css/index/background.css">
     <link rel="stylesheet" href="assets/css/index/nav.css?">
@@ -21,10 +23,22 @@
 
     <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
     <script src="assets/js/global/ajax.js"></script>
+    <script src="assets/js/global/query.js"></script>
+    <script src="assets/js/global/header.js"></script>
+    <script src="assets/js/global/nav.js"></script>
+    <script src="assets/js/global/footer.js"></script>
 
+    <script src="assets/js/index/spinning_profile.js"></script>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="개발자국">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="apple-touch-icon" href="img/logo/app_logo.png">
   </head>
   <body>
+    <header>로딩중...</header>
+    <nav>로딩중...</nav>
+
     <div id="background">
       <h1>
         <span>개발자국,</span>
@@ -47,7 +61,7 @@
 
     <br>
     <p class="glass-bg rounded shadow center box-title">주제</p>
-    <nav>
+    <div class=list>
       <div class="center">
         <img src="img/index/html.png" alt="HTML">
         <a href="" class="g-orange button">HTML</a>
@@ -87,18 +101,22 @@
         <img src="img/index/swift.png" alt="swift">
         <a href="" class="g-orange button">Swift</a>
       </div>
-    </nav>
+    </div>
 
     <br>
     <p class="glass-bg rounded shadow center box-title">이 개발자가 만든 것 들</p>
-    <nav>
+    <div class=list>
       <div class="center">
         <img class="shadow" src="img/index/sm.png" alt="시드메이커" style="background: white">
         <p>
           게임 개발 팀 "시드메이커"의
           웹 페이지 개발 총괄.
         </p>
-        <a href="http://seed-maker.oa.to" class="g-green button">Seed Maker</a>
+        <a
+          href="https://seed-maker.github.io/home"
+          class="g-green button"
+          target="_blank"
+        >Seed Maker</a>
       </div>
       <div class="center">
         <img
@@ -109,7 +127,7 @@
           안중고등학교 커뮤니티 "안중고 소통GO!"의
           개발 총괄.
         </p>
-        <a href="" class="dark button">Coming soon...</a>
+        <a class="dark button">Coming soon...</a>
       </div>
       <div class="center">
         <img
@@ -122,7 +140,7 @@
         </p>
         <a href="" class="g-blue button">Click me!</a>
       </div>
-    </nav>
+    </div>
 
     <br>
     <p class="glass-bg rounded shadow center box-title">저작권</p>
@@ -137,21 +155,6 @@
     <div id="disqus_thread">로딩중..</div>
     <script async src="assets/js/global/disqus.js"></script>
 
-    <footer>
-      <p>
-        Copyright (c) 2018 "Seung-hyun Hwang" All Rights Reserved.
-      </p>
-      <div id="footer-buttons">
-        <img
-          src="img/footer/iconmonstr-github-1-120.png"
-          alt="깃허브">
-        <img
-          src="img/footer/iconmonstr-facebook-messenger-4-120.png"
-          alt="페이스북 메신저">
-        <img
-          src="img/footer/iconmonstr-youtube-9-120.png"
-          alt="유튜브">
-      </div>
-    </footer>
+    <footer>로딩중...</footer>
   </body>
 </html>
