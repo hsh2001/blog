@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/blog/assets/css/global/disqus.css">
 
     <link rel="stylesheet" href="assets/css/index/background.css">
-    <link rel="stylesheet" href="assets/css/index/nav.css?">
+    <link rel="stylesheet" href="assets/css/index/list.css">
     <link rel="stylesheet" href="assets/css/index/profile.css">
 
     <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
@@ -29,6 +29,7 @@
     <script src="assets/js/global/footer.js"></script>
 
     <script src="assets/js/index/spinning_profile.js"></script>
+    <script src="assets/js/index/list.js"></script>
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="개발자국">
@@ -44,13 +45,12 @@
         <span>개발자국,</span>
         <p class="no-border title">개발자들을 위한 나라.</p>
       </h1>
-      <p>웹 프로그래밍 블로그.</p>
+      <p>프로그래밍 블로그.</p>
     </div>
 
-    <div id="profile" class="glass-bg center blue shadow rounded">
+    <div id="profile" class="glass-bg center blue shadow g-orange">
       <img
         id=profile-image
-        class="shadow"
         src="img/index/09060125.JPG"
         alt="블로거 프로필 사진">
       <p class="no-border title">황승현</p>
@@ -60,90 +60,59 @@
     </div>
 
     <br>
-    <p class="glass-bg rounded shadow center box-title">주제</p>
+    <p class="center box-title">주제</p>
     <div class=list>
-      <div class="center">
+      <div class="center" style="background: #ff953e;">
         <img src="img/index/html.png" alt="HTML">
-        <a href="" class="g-orange button">HTML</a>
+        <h3>HTML</h3>
       </div>
-      <div class="center">
-        <img
-          src="img/index/css.png"
-          alt="CSS">
-        <a href="article/css" class="g-blue button">CSS</a>
+      <div class="center" style="background: #459bf4;" href="article/css">
+        <img src="img/index/css.png" alt="CSS">
+        <h3>CSS</h3>
       </div>
-      <div class="center">
-        <img
-          src="img/index/js.png"
-          alt="JavaScript">
-        <a href="" class="g-yellow button">JavaScript</a>
+      <div class="center" style="background: #efda4d">
+        <img src="img/index/js.png" alt="JavaScript">
+        <h3>JavaScript</h3>
       </div>
-      <div class="center">
-        <img
-          class="app"
-          src="img/index/iconmonstr-text-3-120.png"
-          alt="UI UX">
-        <a href="" class="g-orange button">UI / UX</a>
-      </div>
-      <div class="center">
-        <img src="img/index/php.png" alt="php">
-        <a href="" class="g-blue button">php</a>
-      </div>
-      <div class="center">
-        <img src="img/index/mysql.jpg" alt="mysql">
-        <a href="" class="g-blue button">MySQL</a>
-      </div>
-      <div class="center">
-        <img src="img/index/c.png" alt="c">
-        <a href="" class="dark button">C</a>
-      </div>
-      <div class="center">
-        <img src="img/index/swift.png" alt="swift">
-        <a href="" class="g-orange button">Swift</a>
+      <div class="center" style="background: #dcdcdc">
+        <img src="img/index/iconmonstr-text-3-120.png" alt="UI UX">
+        <h3>UI & UX</h3>
       </div>
     </div>
 
     <br>
-    <p class="glass-bg rounded shadow center box-title">이 개발자가 만든 것 들</p>
+    <p class="center box-title">이 개발자가 만든 것 들</p>
     <div class=list>
-      <div class="center">
-        <img class="shadow" src="img/index/sm.png" alt="시드메이커" style="background: white">
-        <p>
-          게임 개발 팀 "시드메이커"의
-          웹 페이지 개발 총괄.
-        </p>
-        <a
-          href="https://seed-maker.github.io/home"
-          class="g-green button"
-          target="_blank"
-        >Seed Maker</a>
+      <div class="center" style="background: #6fdb59">
+        <img src="img/index/sm.png" alt="시드메이커">
+        <p>웹 페이지 개발 총괄</p>
+        <h3>인디게임 개발팀,<br>Seed Maker.</h3>
       </div>
-      <div class="center">
+      <div class="center" style="background: #ffb44f">
         <img
-          class="shadow"
           src="img/index/aj.png"
           alt="안중고 소통GO!">
-        <p>
-          안중고등학교 커뮤니티 "안중고 소통GO!"의
-          개발 총괄.
-        </p>
-        <a class="dark button">Coming soon...</a>
+        <p>개발 총괄.</p>
+        <h3>안중고등학교 커뮤니티,<br>안중고 소통GO!</h3>
       </div>
-      <div class="center">
+      <div class="center" style="background: #ebe7bc">
         <img
-          class="shadow"
           src="img/index/blog.png"
           alt="블로그, 개발자국">
-        <p>
-          프로그래밍 블로그, "개발자국"
-          운영 및 제작.
-        </p>
-        <a href="" class="g-blue button">Click me!</a>
+        <p>운영 및 제작.</p>
+        <h3>프로그래밍 블로그,<br>개발자국.</h3>
+      </div>
+      <div class="center" style="background: #f49912;">
+        <img
+          src="img/index/dot.png"
+          alt="블로그, 개발자국">
+        <p>게임 프로그래밍.</p>
+        <h3>TCG 게임,<br>Day of Tower</h3>
       </div>
     </div>
 
     <br>
-    <p class="glass-bg rounded shadow center box-title">저작권</p>
+    <p class="center box-title">저작권</p>
     <article class="glass-bg rounded shadow">
       <p class="center">
         Copyright (c) 2018 "Seung-hyun Hwang" All Rights Reserved.
@@ -151,7 +120,7 @@
     </article>
 
     <br>
-    <p class="glass-bg rounded shadow center box-title">커뮤니티</p>
+    <p class="center box-title">커뮤니티</p>
     <div id="disqus_thread">로딩중..</div>
     <script async src="assets/js/global/disqus.js"></script>
 
