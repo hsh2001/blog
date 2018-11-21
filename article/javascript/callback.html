@@ -30,8 +30,334 @@
     <nav>로딩중...</nav>
 
     <div class="main-title">콜백 함수(Callback function), "그때 부를게!"</div>
-    <article class="glass-bg rounded shadow">
+    <article class="rounded shadow">
       <p class="title">Callback?</p>
+      <img
+        class="icon"
+        src="/blog/img/article/javascript/callback/iconmonstr-phone-12-240.png"
+        alt="전화">
+      <p>
+        사전적 의미로의 Callback은,
+        "다른 코드의 인수로서 넘겨주는 실행 가능한 코드"
+        (출처: <a target="_blank" href="https://ko.wikipedia.org/wiki/콜백">위키백과</a>)
+        를 뜻한다.
+        <del>이 말이 뭔지 이해했으면 이 글을 열었을 리가 없다.</del>
+        조금 쉽게 말하자면 함수에 다른 (또는 같은) 함수를 인수로서
+        넣어 <b>나중에 호출</b>할 수 있음을 뜻한다.
+      </p>
+
+      <p class="title">함수 선언식과 함수 표현식.</p>
+      <p>
+        본격적으로 콜백에 대해 알아보기 전에,
+        자바스크립트의 함수와 다른 프로그래밍 언어의 함수와의
+        차이점에 대해 알아보자.
+        자바스크립트의 함수는 다른 언어와 다르게
+        변수에 대입할 수 있는 <b>값</b>으로 취급한다.
+        따라서 함수를 선언할 때는 '함수 선언식'과 '함수 표현식'으로 나뉜다.
+      </p>
+      <code>
+//함수 선언식.
+//함수를 선언함.
+function funcName(param) {
+  //코드...
+}
+      </code>
+      <code>
+//함수 표현식
+//함수를 변수에 대입함.
+let funcName = function (param) {
+  //코드...
+}
+      </code>
+      <p>
+        두 코드는 전역함수와 지역함수, 호이스팅을 제외하고는
+        같은 동작을 하는 코드다.
+        이외의 함수 선언식과 함수 표현식의 차이점은
+        이 글에 주제에 벗어나기에
+        다음에 다뤄보도록 하자.
+        우리가 주목해야할 것은 함수 표현식이다.
+        (물론 함수 선언식으로도 설명할 수도 있다.)
+      </p>
+      <p>
+        <b>함수를 변수에 대입</b>하는 행위가 가능하다는 것은
+        다음과 같이
+        A라는 함수의 인수로서 B라는 함수를 넘겨줄 수 있다는 뜻이다.
+      </p>
+      <code>
+A(function B(param) {
+  //코드...
+});
+      </code>
+      <p>
+        조금 어려우니 예제로 살펴보자.
+      </p>
+
+      <p class="title">예제 1. setTimeout 함수.</p>
+      <img
+        class="icon"
+        src="/blog/img/article/javascript/callback/iconmonstr-time-6-240.png"
+        alt="시간">
+      <p>
+        "스크립트를 실행했다가 1초만 쉴 수는 없을까?"
+      </p>
+      <p>
+        가능하다.
+        자바스크립트 내장함수인 setTimeout 이다.
+        이 함수는 두개의 인수를 기대하는데,
+        첫번째 인수는 함수, 두번째 인수는 음이 아닌 실수이다.
+        두번째로 받은 인수만큼의 시간 후에
+        첫번째 인수로 받은 함수를 호출한다.
+        (이때, 시간의 단위는 ms(밀리세컨드)이며, 1ms = 1/1000초이다.)
+      </p>
+      <code>
+//  3000ms(3초) 후에 Hello world!를 경고창에 띄움.
+setTimeout(function () {
+  alert("Hello world!");
+}, 3000);
+      </code>
+      <p>
+        물론 (웹브라우저 자바스크립트를 기준으로)
+        전역변수 alert에는 함수가 할당되어 있으므로
+        다음과 같은 코드도 유효하다.
+      </p>
+      <code>
+//  3000ms(3초) 후에 undefiend를 경고창에 띄움.
+setTimeout(alert, 3000);
+      </code>
+
+      <p class="title">예제 2. window.onload</p>
+      <img
+        class="icon"
+        src="/blog/img/article/javascript/callback/iconmonstr-loading-10-240.png"
+        alt="로딩">
+      <p>
+        웹개발자라면 자주 보았을 window.onload 이다.
+        (window.addEventListener의 사용을 권장하지만
+        이 글에서는 단순 예제를 위한 것이므로
+        window.onload를 사용함.)
+      </p>
+      <code>
+//로딩이 끝난 시점에
+//body 태그의 글씨 색을 빨간색으로 함.
+window.onload = function () {
+  document.body.style.color = 'red';
+}
+      </code>
+      <p>
+        만약 head 태그 안에 있는 저 자바스크립트 코드가
+        onload 함수 안에 있지 않고 함수 밖에서 실행된다면,
+        저 코드가 실행될 시점에 body 태그는 로딩되지 않았으므로
+        body 태그에 접근하지 못해 에러를 낼 것이다.
+        그러므로 body 태그에 접근하여 작동하는 코드는
+        로딩이 끝난 시점에 실행해달라고
+        브라우저에게 부탁한 셈이다.
+      </p>
+
+      <p class="title">동기와 비동기</p>
+      <p>
+        위에서 본 두개의 예제가 콜백함수의 대표적 예시이다.
+        함수를 선언 또는 대입하고
+        언젠가 그 함수가 호출될 것을 기대하는 것이다.
+        나는 이러한 코드를 처음 접했을 때,
+        두근거리는 마음에 코드를 짰지만
+        마음대로 작동되지 않아
+        머리를 쥐어뜯으며 고민했던 기억이 있다.
+        내 머리를 아프게 했던 당시의 코드를 함께 보자.
+      </p>
+      <code>
+console.log(1);
+console.log(2);
+setTimeout(function () {
+  console.log(3);
+}, 1000);
+console.log(4);
+console.log(5);
+      </code>
+      <p>
+        당신은 저 코드를 실행하고 1초 뒤에
+        콘솔에는 어떻게 찍힐 것이라 예상하는가?
+        당시의 나는 1, 2가 나오고
+        1초후에 3, 4, 5가 나올 것이라 예상했지만
+        내 기대와는 다른 결과를 가져왔다.
+      </p>
+      <img
+        class="rounded shadow container"
+        src="/blog/img/article/javascript/callback/stupid_code.png"
+        alt="실행결과">
+      <p>
+        위는 실제로 실행했을 때의 결과다.
+        (undefiend는 코드의 실행결과 반환값일 뿐이다.)
+        예상과는 다르게 1, 2, 4, 5, 3으로 나온 것이다.
+      </p>
+      <p>
+        이유는 간단하게도 setTimeout 함수의
+        첫번째 인수함수(인수로 받은 함수)에서
+        콘솔에 '3'만 찍기 때문이다.
+        setTimeout 함수는 인수함수의 호출을 <b>예약</b>하는 것 뿐이다.
+      </p>
+      <p>
+        비유적으로 표현하자.
+        김밥을 사고,
+        튀김을 사고,
+        치킨 <b>주문 전화를</b> 하고,
+        콜라를 사고,
+        떡볶이를 사면
+        지금 당장 내 손에 있는 건
+        김밥, 튀김, 콜라, 떡볶이다.
+        단, 시간이 지난 후 배달이 도착해
+        치킨이 집에 오면
+        이제 내가 먹을 수 있는건
+        김밥, 튀김, 콜라, 떡볶이, 치킨이다.
+        <del>(배달오는 시간을 못참고 하나를 다 먹지 않았다고 가정한다.)</del>
+        위의 코드에서 치킨은 3과 같은 것이다.
+      </p>
+      <p>
+        이렇게 순서대로 하나하나 같이 처리하는 것을 동기,
+        예약처럼 다음에 처리될 것이 비동기이다.
+        음식점에서 음식을 순서대로 주문하는게 동기라면
+        주문 전화를 하고 배달이 오는 동안
+        다른 일을 할 수 있는 것은 비동기인 것이다.
+      </p>
+      <p>
+        자바스크립트의 비동기 코드에서
+        콜백함수는 빠질 수 없는 존재이다.
+        '언젠가' 처리할 코드에 대해 정의하여야하기 때문이다.
+      </p>
+
+      <p class="title">콜백헬 (Callback Hell)</p>
+      <p>
+        콜백헬, 콜백 지옥이라고 불리는 자바스크립트의 코드 형태는,
+        콜백함수가 여러번 중첩되며 함수로인한
+        들여쓰기가 많아서 코드의 가독성을 해치는 경우다.
+        아래의 코드는
+        1초후에 1을 콘솔에 찍고,
+        그로부터 1초후에 2를 콘솔에 찍고,
+        그로부터 1초후에 3을 콘솔에 찍고,
+        그로부터 1초후에 4를 콘솔에 찍는 코드다.
+      </p>
+      <code>
+setTimeout(function () {
+  console.log(1);
+  setTimeout(function () {
+    console.log(2);
+    setTimeout(function () {
+      console.log(3);
+      setTimeout(function () {
+        console.log(4);
+      }, 1000);
+    }, 1000);
+  }, 1000);
+}, 1000);
+      </code>
+      <p>
+        코드가 구부러진 마냥 이상한 형태를 보인다.
+        이러한 코드는 가독성을 해치기 쉽다.
+        이러한 코드의 해결방안은 다음과 같다.
+      </p>
+      <p><b>1. 논리적으로 분해한다.</b></p>
+      <p>
+        위와 같은 코드는 n초후에 n을 콘솔에 찍는다.
+        그러므로 난잡하게 함수 안에 넣을 필요없이 아래와 같이
+        여러번 setTimeout 함수를 호출해 해결할 수 있다.
+      </p>
+      <code>
+setTimeout(function () {
+  console.log(1);
+}, 1000);
+setTimeout(function () {
+  console.log(2);
+}, 2000);
+setTimeout(function () {
+  console.log(3);
+}, 3000);
+setTimeout(function () {
+  console.log(4);
+}, 4000);
+//반복문을 이용하여도 좋다.
+      </code>
+      <p>
+        하지만 아쉽게도 이렇게 간단히 분리되는 경우는 드물다......
+      </p>
+      <p><b>2. 함수로 분리한다.</b></p>
+      <p>
+        자주 애용되는 패턴이다.
+        각각의 함수들이 서로를 호출하는 형식이다.
+      </p>
+      <code>
+function log1 () {
+  setTimeout(function () {
+    console.log(1);
+    setTimeout(log2, 1000);
+  }, 1000);
+}
+
+function log2 () {
+  setTimeout(function () {
+    console.log(2);
+    setTimeout(log3, 1000);
+  }, 1000);
+}
+
+function log3 () {
+  setTimeout(function () {
+    console.log(3);
+    setTimeout(log3, 1000);
+  }, 1000);
+}
+
+function log4 () {
+  setTimeout(function () {
+    console.log(4);
+  }, 1000);
+}
+      </code>
+      <p><b>3. Promise, async & await 사용.</b></p>
+      <p>
+        비교적 최신에 나온 문법이며 난이도가 조금 있는 문법이다.
+        이에 대한 자세한 내용은 이 글에서는 다루지 않는다.
+      </p>
+      <code>
+//Promsie만 사용.
+
+function wait(ms) {
+  return new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+}
+
+Promise.resolve()
+.then(function () {
+  console.log(1);
+  return wait(1000);
+})
+.then(function () {
+  console.log(2);
+  return wait(1000);
+})
+.then(function () {
+  console.log(3);
+  return wait(1000);
+})
+.then(function () {
+  console.log(4);
+});
+      </code>
+      <code>
+//async await keyword 사용.
+
+function wait(ms) {
+  return new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+}
+
+async function logNumbers() {
+  for (let i = 1; i <= 4; i++) {
+    console.log(i);
+    await wait(1000);
+  }
+}
+      </code>
     </article>
     <a href="/blog" class="long button">홈</a>
     <a href="./" class="long button">글 목록</a>

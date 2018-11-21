@@ -6,6 +6,7 @@ function headerScrollEvent() {
 
   $('header').style.top = -y + 'px';
 }
+
 window.addEventListener('scroll', headerScrollEvent, false);
 window.addEventListener('DOMContentLoaded', function () {
   let header = $('header'),

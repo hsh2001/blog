@@ -3,12 +3,13 @@
   transition: left .5s;
   z-index: 20;
   position: fixed;
-  left: -100vw;
+  left: -105vw;
   top: 0;
   width: 100vw;
   max-width: 550px;
   height: 100vh;
   padding: 2rem 0;
+  border-right: 2px solid #dcdcdc;
   background: #323232;
 }
 
@@ -17,7 +18,7 @@
 }
 
 #menu.close {
-  left: -100vw;
+  left: -105vw;
 }
 
 #menu .item {
