@@ -6,6 +6,7 @@ header {
   width: 100vw;
   height: 4em;
   text-align: center;
+  background: white;
 }
 
 #header-title {

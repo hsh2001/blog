@@ -1,0 +1,15 @@
+[
+  {
+    "name": "HTML",
+    "href": "/blog/article/html"
+  }, {
+    "name": "CSS",
+    "href": "/blog/article/css"
+  }, {
+    "name": "JavaScript",
+    "href": "/blog/article/javascript"
+  }, {
+    "name": "UI & UX",
+    "href": "/blog/article/ui_ux"
+  }
+]

@@ -30,13 +30,8 @@ div.list {
 
 div.list > div {
   cursor: pointer;
-  transition: background .3s;
   padding: 2rem 0;
-  margin: .5rem;
-}
-
-div.list > div:hover {
-  background: white !important;
+  margin: .5rem 1rem;
 }
 
 div.list > div > img {
@@ -47,4 +42,36 @@ div.list > div > img {
 
 div.list > div > h3 {
   margin: .5rem auto;
+}
+
+div.list > .html {
+  background: linear-gradient(45deg, #fca761, #ff7400);
+}
+
+div.list > .css {
+  background: linear-gradient(45deg, #459bf4, #405efb);
+}
+
+div.list > .js {
+  background: linear-gradient(45deg, #efda4d, #edcf06);
+}
+
+div.list > .ui-ux {
+  background: linear-gradient(45deg, white, #b0b0b0);
+}
+
+div.list > .ajgo {
+  background: linear-gradient(45deg, #ffb44f, #ff9a12);
+}
+
+div.list > .dog-foot {
+  background: linear-gradient(45deg, #ebe7bc, #e2e2c2);
+}
+
+div.list > .seed-maker {
+  background: linear-gradient(45deg, #6fdb59, #a8eeac);
+}
+
+div.list > .dot {
+  background: linear-gradient(45deg, #f49912, #f4ae12);
 }

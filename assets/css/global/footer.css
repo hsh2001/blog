@@ -14,6 +14,7 @@ footer {
 }
 
 #footer-buttons img {
+  cursor: pointer;
   display: inline-block;
   width: 48px;
   margin: .5rem;
