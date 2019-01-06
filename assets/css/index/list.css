@@ -68,10 +68,7 @@ div.list > .dog-foot {
   background: linear-gradient(45deg, #ebe7bc, #e2e2c2);
 }
 
-div.list > .seed-maker {
-  background: linear-gradient(45deg, #6fdb59, #a8eeac);
-}
-
-div.list > .dot {
-  background: linear-gradient(45deg, #f49912, #f4ae12);
+div.list > .reverse-change {
+  background: linear-gradient(45deg, #292929, #6a6a6a);
+  color: white;
 }
