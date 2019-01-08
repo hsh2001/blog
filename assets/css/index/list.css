@@ -72,3 +72,8 @@ div.list > .reverse-change {
   background: linear-gradient(45deg, #292929, #6a6a6a);
   color: white;
 }
+
+div.list > [href="spin"] {
+  transition: transform .5s;
+  position: relative;
+}
