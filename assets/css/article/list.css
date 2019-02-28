@@ -1,3 +1,7 @@
+#topic_list > div {
+  margin: .5rem auto;
+}
+
 #topic_list div p  {
   padding: 1rem 0;
 }
