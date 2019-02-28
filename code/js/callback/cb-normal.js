@@ -1,0 +1,3 @@
+f(function g(param) {
+  //코드...
+});
