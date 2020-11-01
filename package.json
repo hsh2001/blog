@@ -9,6 +9,7 @@
     "export": "npm run build && next export",
     "lint": "eslint './**/*.{ts,tsx,js,jsx}'",
     "test": "jest",
+    "deploy": "npm run export ; npx cowsay \"Export done!\" ; next-export-fixer ;  gh-pages -d out",
     "prettier": "prettier . --write"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "gh-pages": "3.1.0",
     "husky": "4.3.0",
     "jest": "26.6.1",
+    "next-export-fixer": "1.0.3",
     "prettier": "2.1.2",
     "pretty-quick": "3.1.0",
     "typescript": "4.0.5"
