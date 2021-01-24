@@ -41,7 +41,7 @@
     "eslint": "7.12.1",
     "eslint-plugin-react": "7.21.5",
     "gh-pages": "3.1.0",
-    "husky": "4.3.0",
+    "husky": "4.3.8",
     "jest": "26.6.1",
     "next-export-fixer": "1.0.3",
     "prettier": "2.1.2",
