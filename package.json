@@ -45,7 +45,7 @@
     "jest": "26.6.1",
     "next-export-fixer": "1.0.3",
     "prettier": "2.1.2",
-    "pretty-quick": "3.1.0",
+    "pretty-quick": "3.1.3",
     "typescript": "4.0.5"
   }
 }
